@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Stmt\Else_;
@@ -15,17 +16,24 @@ use PhpParser\Node\Stmt\Else_;
 |
 */
 
-Route::get('/', function () {
-    return view('listings',[
-        'heading' => 'Latest Listings',
-        'listings' => Listing::all()
-     ]);
-});
+// Route::get('/', function () {
+//     return view('listings',[
+//         'listings' => Listing::all()
+//      ]);
+// });
 
 
-Route::get('/listings/{listing}', function(Listing $listing){
 
-    return view ('listing', [
-        'listing' => $listing
-    ]);  
-});
+// Route::get('/listings/{listing}', function(Listing $listing){
+
+//     return view ('listing', [
+//         'listing' => $listing
+//     ]);  
+// });
+
+//All listing
+Route::get('/', [ListingController::class, 'index']);
+
+
+//Single listing
+Route::get('/listings/{listing}',[ListingController::class, 'show']);
