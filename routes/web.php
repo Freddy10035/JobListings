@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ListingController;
 use App\Models\Listing;
-use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Stmt\Else_;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,9 @@ use PhpParser\Node\Stmt\Else_;
 // store - Store new listing
 // edit - Show form to edit listing
 // update - Update listing
-// destroy - Delete listing  
+// destroy - Delete listing 
+
+//U and u
 
 //All listing
 Route::get('/', [ListingController::class, 'index']);
@@ -63,3 +66,17 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 //Single listing
 Route::get('/listings/{listing}',[ListingController::class, 'show']);
 
+//show register create form
+Route::get('/register', [UserController::class, 'create']);
+
+//Create new user
+Route::post('/users', [UserController::class, 'store']);
+
+//log users out
+Route::post('/logout', [UserController::class, 'logout']);
+
+//show login form
+Route::get('/login',[UserController::class, 'login']);
+
+//Log in user
+Route::post('/users/authenticate',[UserController::class, 'authenticate']);
