@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Listing;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -12,7 +13,7 @@ class ListingController extends Controller
     //show all listings
     public function index(){
         return view('listings.index',[
-            'listings'=>Listing::latest()->filter(request(['tag','search']))->get()
+            'listings'=>Listing::latest()->filter(request(['tag','search']))->paginate(6)
          ]);
     }
 
@@ -40,6 +41,10 @@ class ListingController extends Controller
             'description' => 'required'
         ]);
 
-        return redirect('/');
+        Listing::create($formFields);
+
+       // Session::flash('message', 'Listing Created');
+
+        return redirect('/')->with('message', 'Listing created successfully!');
     }
 }

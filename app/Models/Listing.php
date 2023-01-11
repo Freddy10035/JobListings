@@ -9,20 +9,7 @@ class Listing extends Model
 {
     use HasFactory;
 
-
-    // public static function all() {
-    // return     
-    // }
-
-    // public static function find($id) {
-    //     $listings = self::all();
-
-    //     foreach ($listings as $listing) {
-    //         if ($listing[$id] == $id) {
-    //             return $listing;
-    //         }
-    //     }
-    // }
+   // protected $fillable = ['title', 'company', 'location', 'website', 'email', 'description', 'tags'];
 
 
     //adds the tags filter
@@ -41,4 +28,3 @@ class Listing extends Model
 
     }
 }
-
