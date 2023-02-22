@@ -1,4 +1,4 @@
-<h1>Getting Started</h1>
+# Installing the project to your machine</h1>
 
 1. Clone the repository to your local machine
 2. Make sure you have <b>PHP</b>, <b>composer</b>, and <b>npm</b> installed
@@ -12,7 +12,7 @@
 10. Run `php artisan serve` to start the local development server
 11. Access the website by navigating to `http://localhost:8000` (assuming your server is running on your local machine)
 
-<h2>Dependencies</h2>
+## Dependencies
 
 + PHP
 + Composer
@@ -20,7 +20,7 @@
 + MySQL
 + Laravel framework
 
-<h3>Features</h3>
+## Features
 
     Job Listing and Search
     Job Application
