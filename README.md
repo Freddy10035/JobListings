@@ -1,4 +1,4 @@
-# Installing the project to your machine</h1>
+# Project Installation
 
 1. Clone the repository to your local machine
 2. Make sure you have <b>PHP</b>, <b>composer</b>, and <b>npm</b> installed
