@@ -1,7 +1,7 @@
 <h1>Getting Started</h1>
 
 1. Clone the repository to your local machine
-2. Make sure you have PHP, composer, and npm installed
+2. Make sure you have <b>PHP</b>, <b>composer</b>, and <b>npm</b> installed
 3. Run `composer install` to install the required dependencies
 4. Rename the `.env.example` file to `.env` and update the database and email settings
 5. Run `php artisan key:generate` to generate an app encryption key
