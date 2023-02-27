@@ -91,6 +91,19 @@ return [
             'prefix_indexes' => true,
         ],
 
+        'supabase' => [
+            'driver' => 'pgsql',
+            'url' => env('SUPABASE_URL'),
+            'host' => env('db.xfbdsrwqfffxjknzcuqs.supabase.co'),
+            'port' => env('5432'),
+            'database' => env('postgres'),
+            'username' => env('postgres'),
+            'password' => env('MasterDroyd10035'),
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
+        
+
     ],
 
     /*
