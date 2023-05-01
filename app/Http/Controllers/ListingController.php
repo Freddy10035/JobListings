@@ -114,7 +114,6 @@ class ListingController extends Controller
     public function manage()
     {
         //NOT SuRE HOW THE FIRST ONE GETS AN ERROR
-         return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
-        //return view('listings.manage', ['listings' => auth()->user()]);
+        return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
     }
 }
