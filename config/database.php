@@ -15,8 +15,8 @@ return [
     |
     */
 
-    //'default' => env('DB_CONNECTION', 'mysql'),
-    'default' => env('DB_CONNECTION', 'azure'),
+    'default' => env('DB_CONNECTION', 'mysql'),
+    //'default' => env('DB_CONNECTION', 'azure'),
 
     /*
     |--------------------------------------------------------------------------
@@ -59,28 +59,10 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
-        ],
-
-        // create for azure database
-        'azure' => [
-            'driver' => 'azure',
-            'host' => env('AZURE_MYSQL_HOST', '127.0.0.1'),
-            'port' => env('AZURE_MYSQL_PORT', '3306'),
-            'database' => env('AZURE_MYSQL_DBNAME', 'forge'),
-            'username' => env('AZURE_MYSQL_USERNAME', 'forge'),
-            'password' => env('AZURE_MYSQL_PASSWORD', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'strict' => true,
-            'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
+            'sslmode' => env('DB_SSLMODE', 'prefer'),
+            'options' => (env('MYSQL_SSL') && extension_loaded('pdo_mysql')) ? [
+                PDO::MYSQL_ATTR_SSL_KEY => '/ssl/DigiCertGlobalRootCA.crt.pem',
+            ] : []
         ],
 
         'pgsql' => [
