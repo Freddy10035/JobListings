@@ -69,13 +69,15 @@ php artisan migrate --env=production --force
 php artisan key:generate --env=production --force
 ```
 
-11. Run the following command to start the server:
+11. Run the following command to create a link for the images:
 ```
-php artisan serve --env=production
+php artisan storage:install
 ```
 
 12. You can now view your site by visiting the domain provided by Azure.
 
 Note: Before running the above commands, make sure you have installed all the necessary dependencies and packages required to run a Laravel project on Azure.
     
-  
+# USING NGINX
+Seek more information on how you would configure the application to run on nginx server. 
+Contact for more info.
